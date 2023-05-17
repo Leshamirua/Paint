@@ -83,9 +83,29 @@ namespace Paint.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2708370 {
+            get {
+                object obj = ResourceManager.GetObject("2708370", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _51517 {
             get {
                 object obj = ResourceManager.GetObject("51517", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _67732 {
+            get {
+                object obj = ResourceManager.GetObject("67732", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +146,16 @@ namespace Paint.Properties {
         internal static System.Drawing.Bitmap png_transparent_broom_computer_icons_cleaner_cleaning_clean_icon {
             get {
                 object obj = ResourceManager.GetObject("png-transparent-broom-computer-icons-cleaner-cleaning-clean-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_eraser_icon_art_book_change_png_image_4841036 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-eraser-icon-art-book-change-png-image_4841036", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
