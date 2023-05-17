@@ -184,10 +184,6 @@ namespace Paint
         {
 
         }
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -199,5 +195,10 @@ namespace Paint
         }
 
         
+
+        private void notifyIcon1_Click(object sender, EventArgs e)
+        {
+                this.Show();
+        }
     }
 }

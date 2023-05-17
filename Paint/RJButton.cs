@@ -13,12 +13,12 @@ namespace CustomControls.RJControls
 {
     public class RJButton : Button
     {
-        //Fields
+        
         private int borderSize = 0;
         private int borderRadius = 0;
         private Color borderColor = Color.PaleVioletRed;
 
-        //Properties
+        
         [Category("RJ Code Advance")]
         public int BorderSize
         {
@@ -66,7 +66,7 @@ namespace CustomControls.RJControls
             set { this.ForeColor = value; }
         }
 
-        //Constructor
+       
         public RJButton()
         {
             this.FlatStyle = FlatStyle.Flat;
@@ -77,7 +77,6 @@ namespace CustomControls.RJControls
             this.Resize += new EventHandler(Button_Resize);
         }
 
-        //Methods
         private GraphicsPath GetFigurePath(Rectangle rect, int radius)
         {
             GraphicsPath path = new GraphicsPath();

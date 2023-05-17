@@ -73,13 +73,14 @@ namespace Paint
         {
             this.BackColor = Color.White;
             menuStrip1.BackColor = Color.Silver;
+            menuStrip1.ForeColor = Color.Black;
             panel1.BackColor = Color.White;
             flowLayoutPanel1.BackColor = Color.White;
             panel2.BackColor = Color.White;
-            panel3.BackColor = Color.Silver;
-            panel4.BackColor = Color.Silver;
-            panel5.BackColor = Color.Silver;
-            panel6.BackColor = Color.Silver;
+            panel3.BackColor = Color.Gainsboro;
+            panel4.BackColor = Color.Gainsboro;
+            panel5.BackColor = Color.Gainsboro;
+            panel6.BackColor = Color.Gainsboro;
         }
         public void Brush()
         {
