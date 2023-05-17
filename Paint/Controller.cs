@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Paint
 {
-    public partial class Form1 
+    public partial class SuperPaint 
     {
         Int32 index = 1;
         Bitmap map = new Bitmap(100, 100);

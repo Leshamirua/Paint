@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace Paint
 {
-    public partial class Form1 : Form
+    public partial class SuperPaint : Form
     {
-        public Form1()
+        public SuperPaint()
         {
             InitializeComponent();
             SetSize();
