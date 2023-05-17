@@ -55,37 +55,70 @@ namespace Paint
                 }
             }
         }
-        private void FloodFill(Bitmap bitmap, Point pt, Color targetColor, Color replacementColor)
+        
+        public void BlackTheme()
         {
-            Stack<Point> pixels = new Stack<Point>();
-
-            targetColor = bitmap.GetPixel(pt.X, pt.Y);
-            pixels.Push(pt);
-
-            while (pixels.Count != 0)
+            this.BackColor = Color.Gray;
+            menuStrip1.BackColor = Color.Black;
+            menuStrip1.ForeColor = Color.White;
+            panel1.BackColor = Color.Gray;
+            flowLayoutPanel1.BackColor = Color.Gray;
+            panel2.BackColor = Color.Gray;
+            panel3.BackColor = Color.Black;
+            panel4.BackColor = Color.Black;
+            panel5.BackColor = Color.Black;
+            panel6.BackColor = Color.Black;
+        }
+        public void WhiteTheme()
+        {
+            this.BackColor = Color.White;
+            menuStrip1.BackColor = Color.Silver;
+            panel1.BackColor = Color.White;
+            flowLayoutPanel1.BackColor = Color.White;
+            panel2.BackColor = Color.White;
+            panel3.BackColor = Color.Silver;
+            panel4.BackColor = Color.Silver;
+            panel5.BackColor = Color.Silver;
+            panel6.BackColor = Color.Silver;
+        }
+        public void Brush()
+        {
+            if (previousPictureBox != null)
             {
-                Point a = pixels.Pop();
-                if (a.X < bitmap.Width && a.X > 0 &&
-                        a.Y < bitmap.Height && a.Y > 0)
-                {
-                    if (bitmap.GetPixel(a.X, a.Y) == targetColor)
-                    {
-                        bitmap.SetPixel(a.X, a.Y, replacementColor);
-                        pixels.Push(new Point(a.X - 1, a.Y));
-                        pixels.Push(new Point(a.X + 1, a.Y));
-                        pixels.Push(new Point(a.X, a.Y - 1));
-                        pixels.Push(new Point(a.X, a.Y + 1));
-                    }
-                }
+                previousPictureBox.BackColor = Color.Transparent;
+                previousPictureBox.BorderStyle = BorderStyle.None;
             }
 
-            pictureBox1.Refresh();
+            index = 1;
+            pictureBox3.BackColor = Color.WhiteSmoke;
+            pictureBox3.BorderStyle = BorderStyle.Fixed3D;
+
+            previousPictureBox = pictureBox3;
+        }
+        public void Eraser()
+        {
+            if (previousPictureBox != null)
+            {
+                previousPictureBox.BackColor = Color.Transparent;
+                previousPictureBox.BorderStyle = BorderStyle.None;
+            }
+
+            index = 2;
+            pictureBox5.BackColor = Color.WhiteSmoke;
+            pictureBox5.BorderStyle = BorderStyle.Fixed3D;
+
+            previousPictureBox = pictureBox5;
+        }
+        public void ValueChange()
+        {
+            eraser.Width = trackBar1.Value;
+            pen.Width = trackBar1.Value;
+        }
+        public void ClearDesk()
+        {
+            graphics.Clear(pictureBox1.BackColor);
+            pictureBox1.Image = map;
         }
     }
-    
-
-    internal class Controller
-    {
-
-    }
+   
 }

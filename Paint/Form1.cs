@@ -24,14 +24,6 @@ namespace Paint
            
         private ArrayPoints arraypoints = new ArrayPoints(2);
 
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            graphics.Clear(pictureBox1.BackColor);
-            pictureBox1.Image = map;
-
-        }
-
-        
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
                 isMouse = true;
@@ -45,7 +37,7 @@ namespace Paint
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            if (!isMouse) { return;  }
+            if (!isMouse) { return; }
             arraypoints.SetPoint(e.X, e.Y);
 
             if (index == 1)
@@ -62,12 +54,12 @@ namespace Paint
 
             if (index == 2)
             {
-                    if (arraypoints.GetCountPoints() >= 2)
-                    {
-                        graphics.DrawLines(eraser, arraypoints.GetPoints());
-                        pictureBox1.Image = map;
-                        arraypoints.SetPoint(e.X, e.Y);
-                    }
+                if (arraypoints.GetCountPoints() >= 2)
+                {
+                    graphics.DrawLines(eraser, arraypoints.GetPoints());
+                    pictureBox1.Image = map;
+                    arraypoints.SetPoint(e.X, e.Y);
+                }
             }
         }
         private void rjButton1_Click(object sender, EventArgs e)
@@ -84,14 +76,14 @@ namespace Paint
                 ((PictureBox)sender).BackColor = colorDialog1.Color;
             }
         }
-
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            ClearDesk();
+        }
         private void trackBar1_ValueChanged(object sender, EventArgs e)
         {
-            eraser.Width = trackBar1.Value;
-            pen.Width = trackBar1.Value;
+            ValueChange();
         }
-
-       
 
         private void pngToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -102,36 +94,22 @@ namespace Paint
         {
             jpgSave();
         }
+        private void тёмнаяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BlackTheme();
+        }
+
+        private void светлаяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WhiteTheme();
+        }
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-
-            
-            if (previousPictureBox != null)
-            {
-                previousPictureBox.BackColor = Color.Transparent;
-                previousPictureBox.BorderStyle = BorderStyle.None;
-            }
-
-            index = 1;
-            pictureBox3.BackColor = Color.WhiteSmoke;
-            pictureBox3.BorderStyle = BorderStyle.Fixed3D;
-
-            previousPictureBox = pictureBox3;
-
+            Brush();
         }
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            if (previousPictureBox != null)
-            {
-                previousPictureBox.BackColor = Color.Transparent;
-                previousPictureBox.BorderStyle = BorderStyle.None;
-            }
-
-            index = 2;
-            pictureBox5.BackColor = Color.WhiteSmoke;
-            pictureBox5.BorderStyle = BorderStyle.Fixed3D;
-
-            previousPictureBox = pictureBox5;
+            Eraser();
         }
         
 
@@ -220,32 +198,6 @@ namespace Paint
 
         }
 
-        private void тёмнаяToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.BackColor = Color.Gray;
-            menuStrip1.BackColor = Color.Black;
-            menuStrip1.ForeColor = Color.White;
-            panel1.BackColor = Color.Gray;
-            flowLayoutPanel1.BackColor = Color.Gray;
-            panel2.BackColor = Color.Gray;
-            panel3.BackColor = Color.Black;
-            panel4.BackColor = Color.Black;
-            panel5.BackColor = Color.Black;
-            panel6.BackColor = Color.Black;
-
-        }
-
-        private void светлаяToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.BackColor = Color.White;
-            menuStrip1.BackColor = Color.Silver;
-            panel1.BackColor = Color.White;
-            flowLayoutPanel1.BackColor = Color.White;
-            panel2.BackColor = Color.White;
-            panel3.BackColor = Color.Silver;
-            panel4.BackColor = Color.Silver;
-            panel5.BackColor = Color.Silver;
-            panel6.BackColor = Color.Silver; 
-        }
+        
     }
 }
